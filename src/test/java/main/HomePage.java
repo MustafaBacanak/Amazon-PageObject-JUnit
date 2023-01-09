@@ -2,29 +2,30 @@ package main;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-
-import java.util.List;
 
 public class HomePage extends BasePage {
 
 //    private final By accountTexLocator = new By.ByCssSelector("sasas");
 //    private final By accountTexLocator1 = By.cssSelector("sasas");
-    private final By accountTexLocator2 = By.id("twotabsearchtextbox");
+    private final By goLoginPageButton = By.id("nav-link-accountList");
 
     public HomePage(WebDriver driver) {
         super(driver);
     }
 
-    public void sendSearchText(){
-
-        find(accountTexLocator2).sendKeys("Kel Hakkı");
-        waitFor(5);
+    //* Ana sayfanın açıldığı kontrol edilir.
+    public String getUrl(){
+        return driver.getCurrentUrl();
     }
 
-//    private List<WebElement> forIsLogin(){
-//        return findAll(accountTexLocator);
-//    }
+    //Login Sayfasına Git
+    public void goLoginPage(){
+        find(goLoginPageButton).click();
+    }
 
+    //* Login işlemi kontrol edilir.
+    public String loginControl() {
+    return find(goLoginPageButton).getText();
+    }
 
 }
