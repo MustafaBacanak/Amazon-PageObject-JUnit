@@ -11,13 +11,13 @@ public class HomePage extends BasePage {
 //    private final By accountTexLocator1 = By.cssSelector("sasas");
 
     Select select;
-    private final By createListBtn1 = By.xpath("//span[.='Create a List']");
-    private final By createListBtn2 = By.cssSelector("input[class='a-button-input']");
-    private final By createListBtn3 = By.id("wl-redesigned-create-list");
-    private final By goLoginPageButton = By.id("nav-link-accountList");
-    private final By shoppingListName = By.id("list-name");
-    private final By goHomePage = By.id("nav-logo-sprites");
-    private final By searchDropdownBox = By.id("searchDropdownBox");
+    private final By createListBtn1Locator = By.xpath("//span[.='Create a List']");
+    private final By createListBtn2Locator = By.cssSelector("input[class='a-button-input']");
+    private final By createListBtn3Locator = By.id("wl-redesigned-create-list");
+    private final By goLoginPageBtnLocator = By.id("nav-link-accountList");
+    private final By shoppingListNameLocator = By.id("list-name");
+    private final By goHomePageLocator = By.id("nav-logo-sprites");
+    private final By searchDropdownBoxLocator = By.id("searchDropdownBox");
 
 
     public HomePage(WebDriver driver) {
@@ -31,40 +31,41 @@ public class HomePage extends BasePage {
 
     //Login Sayfasına Git
     public void goLoginPage(){
-        find(goLoginPageButton).click();
+        find(goLoginPageBtnLocator).click();
     }
 
     //* Login işlemi kontrol edilir.
     public String loginControl() {
-    return find(goLoginPageButton).getText();
+    return find(goLoginPageBtnLocator).getText();
     }
 
     //* Hesabım bölümünden Team4 Liste isimli yeni bir liste oluşturulur.
 
     public void createList(String listName){
 
-        moveToElementActions(goLoginPageButton);
+        moveToElementActions(goLoginPageBtnLocator);
         waitFor(1);
-        find(createListBtn1).click();
+        find(createListBtn1Locator).click();
         try {
-            find(createListBtn2).click();
+            find(createListBtn2Locator).click();
         } catch (Exception e) {
 
             System.out.println("Harızda bir liste olduğu için createListBtn1 çalışmadı ve catch aktif oldu ");
         }
-        WebElement listNameInput = find(shoppingListName);
+        WebElement listNameInput = find(shoppingListNameLocator);
         listNameInput.clear();
         listNameInput.sendKeys(listName);
-        find(createListBtn3).click();
+        find(createListBtn3Locator).click();
         waitFor(2);
-        find(goHomePage).click();
+        find(goHomePageLocator).click();
     }
 
     //* Arama butonu yanındaki kategoriler tabından bilgisayar seçilir.
     public void categories (){
-        WebElement searh = find(searchDropdownBox);
-        select = new Select(searh);
+        WebElement search = find(searchDropdownBoxLocator);
+        select = new Select(search);
         select.selectByVisibleText("Computers");
+
     }
 
     //* Bilgisayar kategorisi seçildiği kontrol edilir.
@@ -74,7 +75,7 @@ public class HomePage extends BasePage {
 
     //* Arama alanına msi yazılır ve arama yapılır.
     public void searchProduct (String productName ){
-        find(searchDropdownBox).sendKeys(Keys.TAB,productName,Keys.ENTER);
+        find(searchDropdownBoxLocator).sendKeys(Keys.TAB,productName,Keys.ENTER);
 
     }
 
