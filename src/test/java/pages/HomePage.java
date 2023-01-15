@@ -1,14 +1,13 @@
-package main;
+package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+import reusable.BasePage;
 
 public class HomePage extends BasePage {
-
-//    private final By accountTexLocator1 = By.cssSelector("sasas");
 
     Select select;
     private final By createListBtn1Locator = By.xpath("//span[.='Create a List']");
@@ -18,7 +17,6 @@ public class HomePage extends BasePage {
     private final By shoppingListNameLocator = By.id("list-name");
     private final By goHomePageLocator = By.id("nav-logo-sprites");
     private final By searchDropdownBoxLocator = By.id("searchDropdownBox");
-
 
     public HomePage(WebDriver driver) {
         super(driver);

@@ -2,6 +2,7 @@ package test;
 
 public class TestCase {
 
+    //* https://www.amazon.com/ sayfasına gidilir.
     //* Ana sayfanın açıldığı kontrol edilir.
     //* Çerez tercihlerinden Çerezleri kabul et seçilir.
     //* Siteye login olunur.

@@ -1,4 +1,4 @@
-package main;
+package reusable;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
@@ -16,7 +16,7 @@ import java.util.List;
 
 public abstract class BasePage {
 
-    WebDriver driver;
+    protected WebDriver driver;
 
     public BasePage(WebDriver driver) {
         this.driver = driver;

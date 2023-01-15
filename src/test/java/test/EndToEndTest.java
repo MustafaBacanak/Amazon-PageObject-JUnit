@@ -1,6 +1,6 @@
 package test;
 
-import main.*;
+import pages.*;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -30,7 +30,7 @@ public class EndToEndTest extends TestBase {
 
         loginPage.beLogin();
 
-        Assert.assertTrue(homePage.loginControl().contains("Osman"));
+        Assert.assertTrue(homePage.loginControl().contains("Mustafa"));
         homePage.createList("Team4");
         homePage.categories();
         Assert.assertEquals("Computers", homePage.categoryControl());

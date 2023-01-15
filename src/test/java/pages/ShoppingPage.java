@@ -1,8 +1,9 @@
-package main;
+package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import reusable.BasePage;
 
 public class ShoppingPage extends BasePage {
 
@@ -50,6 +51,7 @@ public class ShoppingPage extends BasePage {
         find(manageListLocator).click();
         waitFor(1);
         scrollDownActions();
+        waitFor(1);
         find(deleteListLocator).click();
         waitFor(2);
         find(yesBtnLocator).click();

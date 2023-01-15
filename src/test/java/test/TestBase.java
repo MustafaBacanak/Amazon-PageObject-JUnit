@@ -21,8 +21,9 @@ public abstract class TestBase {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
-        driver.get("https://www.amazon.com/");
 
+        //* https://www.amazon.com/ sayfasına gidilir.
+        driver.get("https://www.amazon.com/");
 
     }
 
