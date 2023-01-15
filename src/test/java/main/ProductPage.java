@@ -42,7 +42,6 @@ public class ProductPage extends BasePage {
         productList.get(1).click();
         waitFor(1);
        find(addToListLocator).click();
-       waitFor(1);
 
     }
 

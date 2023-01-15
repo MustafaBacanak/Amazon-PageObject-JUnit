@@ -22,13 +22,15 @@ public abstract class TestBase {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         driver.get("https://www.amazon.com/");
+
+
     }
 
     //  tearDown
     @After
     public void tearDown() throws InterruptedException {
-        Thread.sleep(5000);
-//        driver.quit();
+        Thread.sleep(2000);
+        driver.quit();
     }
 
 

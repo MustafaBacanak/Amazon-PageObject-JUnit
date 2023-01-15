@@ -25,23 +25,23 @@ public class HomePage extends BasePage {
     }
 
     //* Ana sayfanın açıldığı kontrol edilir.
-    public String getUrl(){
+    public String getUrl() {
         return driver.getCurrentUrl();
     }
 
     //Login Sayfasına Git
-    public void goLoginPage(){
+    public void goLoginPage() {
         find(goLoginPageBtnLocator).click();
     }
 
     //* Login işlemi kontrol edilir.
     public String loginControl() {
-    return find(goLoginPageBtnLocator).getText();
+        return find(goLoginPageBtnLocator).getText();
     }
 
     //* Hesabım bölümünden Team4 Liste isimli yeni bir liste oluşturulur.
 
-    public void createList(String listName){
+    public void createList(String listName) {
 
         moveToElementActions(goLoginPageBtnLocator);
         waitFor(1);
@@ -56,12 +56,12 @@ public class HomePage extends BasePage {
         listNameInput.clear();
         listNameInput.sendKeys(listName);
         find(createListBtn3Locator).click();
-        waitFor(2);
+        waitFor(1);
         find(goHomePageLocator).click();
     }
 
     //* Arama butonu yanındaki kategoriler tabından bilgisayar seçilir.
-    public void categories (){
+    public void categories() {
         WebElement search = find(searchDropdownBoxLocator);
         select = new Select(search);
         select.selectByVisibleText("Computers");
@@ -69,19 +69,14 @@ public class HomePage extends BasePage {
     }
 
     //* Bilgisayar kategorisi seçildiği kontrol edilir.
-    public String categoryControl(){
+    public String categoryControl() {
         return select.getFirstSelectedOption().getText();
     }
 
     //* Arama alanına msi yazılır ve arama yapılır.
-    public void searchProduct (String productName ){
-        find(searchDropdownBoxLocator).sendKeys(Keys.TAB,productName,Keys.ENTER);
+    public void searchProduct(String productName) {
+        find(searchDropdownBoxLocator).sendKeys(Keys.TAB, productName, Keys.ENTER);
 
     }
-
-
-
-
-
 
 }

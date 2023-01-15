@@ -11,6 +11,10 @@ public class ShoppingPage extends BasePage {
     private final By shpngListBtnLocator = By.cssSelector("div[class='nav-panel'] > a");
     private final By deleteBtnLocator = By.cssSelector("input[name='submit.deleteItem']");
     private final By deletedTextLocator = By.xpath("//div[text()='Deleted']");
+    private final By moreBtnLocator = By.xpath("//div[text()='More']");
+    private final By manageListLocator = By.id("editYourList");
+    private final By deleteListLocator = By.cssSelector("span[class='a-button a-spacing-base a-button-base full-width-element']");
+    private final By yesBtnLocator = By.cssSelector("input[name='submit.save']");
 
     public ShoppingPage(WebDriver driver) {
         super(driver);
@@ -29,7 +33,7 @@ public class ShoppingPage extends BasePage {
         return find(deleteBtnLocator);
     }
 
-    //* Eklenen ürün Virgosol Liste’sinden silinir.
+    //* Eklenen ürün Team4 Liste’sinden silinir.
 
     public void deleteProduct(){
         find(deleteBtnLocator).click();
@@ -39,6 +43,20 @@ public class ShoppingPage extends BasePage {
     public WebElement deletedControl(){
         return find(deletedTextLocator);
     }
+
+    //* Team4 Listesi silinir.
+    public void deleteList(){
+        find(moreBtnLocator).click();
+        find(manageListLocator).click();
+        waitFor(1);
+        scrollDownActions();
+        find(deleteListLocator).click();
+        waitFor(2);
+        find(yesBtnLocator).click();
+        waitFor(1);
+
+    }
+
 
 
 
