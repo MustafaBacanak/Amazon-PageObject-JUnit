@@ -12,7 +12,7 @@ public class ProductPage extends BasePage {
     private final By resultTextLocator = By.cssSelector("span[class='a-color-state a-text-bold']");
     private final By goSecPageLocator = By.cssSelector("a[aria-label='Go to page 2']");
     private final By pageSecTextLocator = By.cssSelector("span.s-pagination-selected");
-    private final By productsListLocator = By.cssSelector("span[class='a-size-medium a-color-base a-text-normal']");
+    private final By productsListLocator = By.cssSelector("div[data-component-type='s-search-result']");
     private final By addToListLocator = By.id("add-to-wishlist-button-submit");
     private final By basketProductLocator = By.xpath("//*[text()='View Your List']");
 

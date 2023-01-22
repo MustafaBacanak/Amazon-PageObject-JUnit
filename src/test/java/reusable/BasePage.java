@@ -29,7 +29,8 @@ public abstract class BasePage {
 
     public List<WebElement> findAll(By locator){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        return wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(locator));
+        return wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(locator));
+                                             //visibilityOfAllElementsLocatedBy
     }
 
     public void selectFromDropDown(WebElement dropdown, String secenek) {
